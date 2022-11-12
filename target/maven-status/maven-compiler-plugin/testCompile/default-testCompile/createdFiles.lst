@@ -1,0 +1,13 @@
+Runners\TestRunners.class
+Pages\P02_login.class
+StepDefination\D05_hoverCategoriesStepDef.class
+StepDefination\D07_followUsStepDef.class
+StepDefination\D06_homeSlidersStepDef.class
+StepDefination\Hooks.class
+StepDefination\D03_currenciesStepDef.class
+StepDefination\D01_registerStepDef.class
+StepDefination\D08_WishlistStepDef.class
+Pages\P01_register.class
+StepDefination\D02_loginStepDef.class
+StepDefination\D04_searchStepDef.class
+Pages\P03_homePage.class

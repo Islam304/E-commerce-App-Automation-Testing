@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="6" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="24" time="350.336">
+<testcase classname="test register" name="Register with valid data" time="62.959">
+<system-out><![CDATA[Given initialize register feature...........................................passed
+When user press register icon...............................................passed
+And user selects "male" and enters "islam" as first name, "khaled" as last name, "islamkhaled4520@gmail.com" as email, "Aman" as company, "Aman@2" as password and "Aman@2" as confirm password.passed
+And user set his birthday as follow "21" Day "5" Month "1994" Year..........passed
+And user clicks on register button..........................................passed
+Then successful registration message appears................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test register" name="user didn't enter any data" time="17.326">
+<system-out><![CDATA[Given initialize register feature...........................................passed
+When user press register icon...............................................passed
+And user clicks on register button..........................................passed
+Then error messages appear..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test register" name="user didn't enter the same password" time="16.045">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given initialize register feature...........................................passed
+When user press register icon...............................................passed
+And user selects "male" and enters "islam" as first name, "khaled" as last name, "islamkhaled4520@gmail.com" as email, "Aman" as company, "Aman@2" as password and "Aman@0" as confirm password.passed
+And user set his birthday as follow "21" Day "5" Month "1994" Year..........passed
+And user clicks on register button..........................................passed
+Then user get non identical passwords.......................................failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at StepDefination.D01_registerStepDef.checkNonIdenticalMessage(D01_registerStepDef.java:79)
+	at ✽.user get non identical passwords(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F01_Register.feature:26)
+]]></failure>
+</testcase>
+<testcase classname="test register" name="email already exist" time="15.776">
+<system-out><![CDATA[Given initialize register feature...........................................passed
+When user press register icon...............................................passed
+And user selects "male" and enters "islam" as first name, "khaled" as last name, "islamkhaled4520@gmail.com" as email, "Aman" as company, "Aman@2" as password and "Aman@2" as confirm password.passed
+And user set his birthday as follow "21" Day "5" Month "1994" Year..........passed
+And user clicks on register button..........................................passed
+Then email exist message appears............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Login Functionality" name="user could login with valid email and password" time="10.597">
+<failure message="The following asserts failed:&#10;&#9;expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnUrl=%2F],&#10;&#9;expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[Given user navigate to login page...........................................passed
+When user enter email "islamkhaled4520@gmail.com" and password "Aman@2".....passed
+And user press login........................................................passed
+Then user go to home page...................................................failed
+
+StackTrace:
+java.lang.AssertionError: The following asserts failed:
+	expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnUrl=%2F],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at StepDefination.D02_loginStepDef.checkOnLogin(D02_loginStepDef.java:60)
+	at ✽.user go to home page(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F02_Login.feature:10)
+]]></failure>
+</testcase>
+<testcase classname="Test Login Functionality" name="user could login with invalid email and password" time="17.157">
+<system-out><![CDATA[Given user navigate to login page...........................................passed
+When enter email "Islam010@gmail.com" and password "Isla123"................passed
+And user press login........................................................passed
+Then check on error message.................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Login Functionality" name="Enter invalid email form" time="14.544">
+<system-out><![CDATA[Given user navigate to login page...........................................passed
+When enter email "fd" and password "dwr"....................................passed
+Then check on email error message...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Login Functionality" name="user forget Password" time="12.4">
+<system-out><![CDATA[Given user navigate to login page...........................................passed
+When user press forget password.............................................passed
+And user enter email "islamkhaled4520@gmail.com"............................passed
+And user press recover button...............................................passed
+Then user gets instructions message has been sent...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="test currency" name="user change currency to euro" time="11.102">
+<system-out><![CDATA[Given initialize Currencies feature.........................................passed
+When user press on currencies...............................................passed
+And user chooses "euro".....................................................passed
+Then the product currency changes to "euro".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with name" time="10.227">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "book"......................................................passed
+And clicks on search........................................................passed
+Then user should find the "book"............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with name 2" time="9.788">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "laptop"....................................................passed
+And clicks on search........................................................passed
+Then user should find the "laptop"..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with name 3" time="9.593">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "nike"......................................................passed
+And clicks on search........................................................passed
+Then user should find the "nike"............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with sku" time="11.135">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "SCI_FAITH" as product sku..................................passed
+And clicks on search........................................................passed
+Then user should find the "SCI_FAITH" as product sku........................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with sku 2" time="13.914">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "APPLE_CAM" as product sku..................................passed
+And clicks on search........................................................passed
+Then user should find the "APPLE_CAM" as product sku........................passed
+]]></system-out>
+</testcase>
+<testcase classname="test search" name=": search products with sku 3" time="10.907">
+<system-out><![CDATA[Given initialize Search feature.............................................passed
+When user types "SF_PRO_11" as product sku..................................passed
+And clicks on search........................................................passed
+Then user should find the "SF_PRO_11" as product sku........................passed
+]]></system-out>
+</testcase>
+<testcase classname="test hover to categories" name="test random hover" time="15.354">
+<system-out><![CDATA[Given initialize hover to categories feature................................passed
+When user select random category he should go its page......................passed
+]]></system-out>
+</testcase>
+<testcase classname="test slider" name="test nokia pic" time="13.23">
+<failure message="expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[Given initialize slider feature.............................................passed
+When user select Nokia picture..............................................passed
+Then user should navigate to Nokia page.....................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at StepDefination.D06_homeSlidersStepDef.checkOnNokiaUrl(D06_homeSlidersStepDef.java:27)
+	at ✽.user should navigate to Nokia page(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F06_homeSliders.feature:7)
+]]></failure>
+</testcase>
+<testcase classname="test slider" name="test iphone pic" time="8.783">
+<failure message="expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[Given initialize slider feature.............................................passed
+When user select iphone picture.............................................passed
+Then user should navigate to iphone page....................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at StepDefination.D06_homeSlidersStepDef.checkOnIphoneUrl(D06_homeSlidersStepDef.java:37)
+	at ✽.user should navigate to iphone page(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F06_homeSliders.feature:11)
+]]></failure>
+</testcase>
+<testcase classname="test follow us" name="user clicks follow us icons" time="11.436">
+<system-out><![CDATA[Given initialize follow us feature..........................................passed
+When user clicks "facebook".................................................passed
+Then user should go to selected "https://www.facebook.com/nopCommerce"......passed
+]]></system-out>
+</testcase>
+<testcase classname="test follow us" name="user clicks follow us icons 2" time="7.667">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a[href=&quot;https://twitter.com/nopCommerce&quot;]&quot;}&#10;  (Session info: chrome=107.0.5304.107)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.6.0', revision: '79f1c02ae20'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6d4923be602463bc7b0720b3180325eb, findElement {using=css selector, value=a[href=&quot;https://twitter.com/nopCommerce&quot;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\ESLAMK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53751/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6d4923be602463bc7b0720b3180325eb" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given initialize follow us feature..........................................passed
+When user clicks "twitter"..................................................failed
+Then user should go to selected "https://twitter.com/nopCommerce"...........skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"a[href="https://twitter.com/nopCommerce"]"}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6d4923be602463bc7b0720b3180325eb, findElement {using=css selector, value=a[href="https://twitter.com/nopCommerce"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\ESLAMK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53751/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6d4923be602463bc7b0720b3180325eb
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at Pages.P03_homePage.goToFollowUs(P03_homePage.java:93)
+	at StepDefination.D07_followUsStepDef.clickOnIcon(D07_followUsStepDef.java:21)
+	at ✽.user clicks "twitter"(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F07_followUs.feature:6)
+]]></failure>
+</testcase>
+<testcase classname="test follow us" name="user clicks follow us icons 3" time="14.735">
+<system-out><![CDATA[Given initialize follow us feature..........................................passed
+When user clicks "youtube"..................................................passed
+Then user should go to selected "https://www.youtube.com/user/nopCommerce"..passed
+]]></system-out>
+</testcase>
+<testcase classname="test follow us" name="user clicks follow us icons 4" time="11.903">
+<failure message="expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]" type="java.lang.AssertionError"><![CDATA[Given initialize follow us feature..........................................passed
+When user clicks "news".....................................................passed
+Then user should go to selected "https://demo.nopcommerce.com/new-online-store-is-open".failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at StepDefination.D07_followUsStepDef.checkOnUrl(D07_followUsStepDef.java:33)
+	at ✽.user should go to selected "https://demo.nopcommerce.com/new-online-store-is-open"(file:///D:/ITI/Automation/E-commerce_Projest/src/main/resources/Feature/F07_followUs.feature:7)
+]]></failure>
+</testcase>
+<testcase classname="test wish list" name="test add HTC to wish list" time="7.804">
+<system-out><![CDATA[Given initialize wish list feature..........................................passed
+When user select to add HTC phone to wish list..............................passed
+Then user should get a success message......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="test wish list" name="check on wish list cart" time="14.442">
+<system-out><![CDATA[Given initialize wish list feature..........................................passed
+When user select to add HTC phone to wish list..............................passed
+And click on wish list......................................................passed
+Then user should find the product...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
