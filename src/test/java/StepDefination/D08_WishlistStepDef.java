@@ -19,7 +19,7 @@ public class D08_WishlistStepDef {
     public void addProductToWishList() throws InterruptedException {
         //adding htc phone
         home.addProductToWishList(productsName[1]);
-
+// adding two drops
 
     }
     @Then("user should get a success message")
